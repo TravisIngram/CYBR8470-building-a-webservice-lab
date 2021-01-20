@@ -6,8 +6,6 @@
 # @Last modified time: 2018-09-06T15:21:50-05:00
 # @Copyright: Copyright (C) 2018 Matthew L. Hale
 
-
-
 version: "2"
 services:
   nginx:
@@ -28,12 +26,12 @@ services:
     volumes:
       - ./backend:/var/www/backend
     expose:
-     - "8000"
+      - "8000"
     depends_on:
-     - db
+      - db
   db:
     restart: always
-    image: postgres
+    image: postgres:10.3
     volumes:
       - postgres-config:/etc/postgresql
       - postgres-data:/var/lib/postgresql/data
